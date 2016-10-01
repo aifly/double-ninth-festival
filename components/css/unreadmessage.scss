@@ -124,11 +124,32 @@
 
 .unreadmessage-C{
   @include full();
+
   .answer{
     width: 3rem;
     @include pos(a);
     left: 50%;
     margin-left: -1.5rem;
     bottom: 1.2rem;
+    @include animation(rotate .5s infinite alternate);
   }
+
+  
+}
+
+@-webkit-keyframes rotate{
+  0%{
+    @include transform(rotate(0));
+  }
+  33%{
+    @include transform(rotate(10deg));
+  }
+  66%{
+    @include transform(rotate(-4deg));
+  }
+  100%{
+    @include transform(rotate(0)); 
+  }
+  
+
 }

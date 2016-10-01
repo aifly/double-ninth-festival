@@ -1,0 +1,45 @@
+.share-C {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0; }
+  .share-C h1 {
+    height: 4rem; }
+  .share-C .wish-text {
+    width: 9rem;
+    height: 7rem;
+    margin: 0 auto; }
+    .share-C .wish-text h2 {
+      height: 1.5rem; }
+    .share-C .wish-text div {
+      padding-left: 1rem;
+      color: #6c5418;
+      width: 7rem;
+      font-size: .5rem;
+      line-height: 24px; }
+  .share-C .share-btns {
+    width: 10rem;
+    height: 2rem;
+    margin-top: -.3rem;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    -webkit-box-orient: horizontal; }
+    .share-C .share-btns div {
+      width: 3.4rem;
+      height: 90%; }
+      .share-C .share-btns div:nth-of-type(2) {
+        width: 6rem; }
+        .share-C .share-btns div:nth-of-type(2) a {
+          display: block;
+          width: 100%;
+          height: 100%; }
+  .share-C .mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0; }
+
+/*# sourceMappingURL=share.css.map */

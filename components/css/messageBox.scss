@@ -126,12 +126,21 @@
   
   div{
     &.messageBox-content{
-      height: 84vh;
+      height: 92vh;
       overflow: hidden;
     }
     &.messageBox-footer{
        @include pos(a);
        bottom: 0;
+    }
+    
+  }
+  .dialog-C{
+    @include full();
+    background: rgba(0,0,0,.5);
+    .dialog{
+      width: 8rem;
+      margin:5rem auto;
     }
   }
 }

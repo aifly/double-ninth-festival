@@ -9,6 +9,22 @@
     position: absolute;
     left: 50%;
     margin-left: -1.5rem;
-    bottom: 1.2rem; }
+    bottom: 1.2rem;
+    -webkit-animation: rotate 0.5s infinite alternate;
+    animation: rotate 0.5s infinite alternate; }
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0); }
+  33% {
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg); }
+  66% {
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4deg); }
+  100% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0); } }
 
 /*# sourceMappingURL=unreadmessage.css.map */

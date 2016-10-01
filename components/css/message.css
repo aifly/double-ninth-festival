@@ -1,10 +1,16 @@
 .message-C {
-  width: 90%;
+  width: 96%;
   margin: 0 auto;
   position: relative;
   top: .4rem;
-  height: 2rem;
   clear: both; }
+  .message-C h1 {
+    height: .8rem;
+    line-height: .8rem;
+    font-weight: normal;
+    font-size: .4rem;
+    color: #999;
+    text-align: center; }
   .message-C.me .text {
     float: right;
     background: #ecebef;
@@ -22,6 +28,8 @@
       transform: rotate(45deg); }
   .message-C.me .role {
     float: right; }
+  .message-C .smile {
+    width: 1rem !important; }
   .message-C .text {
     color: #000;
     height: 1.3rem;
@@ -30,9 +38,12 @@
     line-height: 1.3rem;
     border-radius: 0.2rem;
     margin-left: .4rem;
-    padding: 0 .4rem;
+    padding: 0 .3rem;
     position: relative;
     font-size: .4rem; }
+    .message-C .text img {
+      width: 3rem;
+      margin-top: -.5rem; }
     .message-C .text:before {
       content: "";
       position: absolute;
@@ -43,6 +54,8 @@
       top: 30%;
       -webkit-transform: rotate(45deg);
       transform: rotate(45deg); }
+  .message-C .notext {
+    background: none !important; }
   .message-C .role {
     width: 1.3rem;
     float: left; }

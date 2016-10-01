@@ -124,11 +124,18 @@
 
 .message-C{
   $height: 1.3rem;
-  width: 90%;
+  width: 96%;
   margin: 0 auto;
   @include pos(r);
   top: .4rem;
-  height: 2rem;
+  h1{
+    height: .8rem;
+    line-height: .8rem;
+    font-weight: normal;
+    font-size: .4rem;
+    color:#999;
+    text-align: center;
+  }
   clear: both;
   &.me{
     .text{
@@ -152,6 +159,11 @@
       float: right;
     }
   }
+
+  .smile{
+    width: 1rem !important;
+  }
+
   .text{
     color:#000;
     height:$height;
@@ -160,9 +172,13 @@
     line-height: $height;
     @include br(.2rem);
     margin-left:.4rem;
-    padding:0 .4rem;
+    padding:0 .3rem;
     @include pos(r);
     font-size:.4rem;
+    img{
+      width: 3rem;
+      margin-top: -.5rem;
+    }
     &:before{
       content:"";
       @include pos(a);
@@ -176,6 +192,9 @@
 
     }
 
+  }
+  .notext{
+    background: none !important;;
   }
   .role{
     width: $height;

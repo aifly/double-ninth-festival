@@ -1,0 +1,220 @@
+@mixin pos($v) {
+  @if $v == a {
+    position: absolute;
+  } 
+  @else if $v == r {
+     position: relative;
+  } 
+  @else if $v == f {
+    position: fixed;
+  }
+}
+
+@mixin br($v:50%) {
+  border-radius: $v;
+}
+
+@mixin opacity($v:0) {
+  opacity: $v;
+}
+
+@mixin transform($v) {
+  -webkit-transform: $v;
+  transform: $v;
+}
+
+@mixin transitionDelay($time){
+  -webkit-transition-delay: $time;
+  transition-delay: $time;
+}
+
+
+@mixin transformOrigin($v) {
+  -webkit-transform-origin: $v;
+  transform-origin: $v;
+}
+
+@mixin backgroundSize($v:cover) {
+  background-size: $v;
+}
+
+@mixin transition_transform($v) {
+  -webkit-transition: -webkit-transform $v;
+  transition: transform $v;
+}
+
+@mixin transform_origin($v:center) {
+  -webkit-transform-origin: $v;
+  transform-origin: $v;
+}
+
+@mixin transition($v) {
+  -webkit-transition: $v;
+  transition: $v;
+}
+
+@mixin transitionTimingFunction($v:cubic-bezier(0, 0.9, 0.17, 1.01))
+{
+  -webkit-transition-timing-function: $v;
+  transition-timing-function: $v;
+}
+
+@mixin transform($v) {
+  -webkit-transform: $v;
+  transform: $v;
+}
+
+@mixin background($bg) {
+  background: $bg;
+}
+
+@mixin backgroundSize($v:cover) {
+  background-size: $v;
+}
+
+@mixin animation($v) {
+  -webkit-animation: $v;
+  animation: $v;
+}
+@mixin animationDelay($time){
+  -webkit-animation-delay:$time;
+          animation-delay:$time;
+}
+
+@mixin transform3d() {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  perspective: 800px;
+  -webkit-perspective: 800px;
+}
+
+@mixin displayBox($v) {
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  -webkit-box-orient: $v;
+}
+
+@mixin fly-h-gradient-line {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(204, 204, 204, .2)), color-stop(0.5, rgba(204, 204, 204, 1)), to(rgba(204, 204, 204, .2)));
+  background: -moz-linear-gradient(left, rgba(204, 204, 204, .2), rgba(204, 204, 204, 1) 50%, rgba(204, 204, 204, .2));
+  background: -ms-linear-gradient(left, rgba(204, 204, 204, .2), rgba(204, 204, 204, 1) 50%, rgba(204, 204, 204, .2));
+}
+
+@mixin fly-v-gradient-line($minOpacity:.2,$maxOpacity:1) {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(204, 204, 204, $minOpacity)), color-stop(0.5, rgba(204, 204, 204, $maxOpacity)), to(rgba(204, 204, 204, $minOpacity)));
+  background: -moz-linear-gradient(top, rgba(204, 204, 204, $minOpacity), rgba(204, 204, 204, $maxOpacity) 50%, rgba(204, 204, 204, $minOpacity));
+  background: -ms-linear-gradient(top, rgba(204, 204, 204, $minOpacity), rgba(204, 204, 204, $maxOpacity) 50%, rgba(204, 204, 204, $minOpacity));
+}
+
+@mixin displayFlex($v:column) {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: $v;
+}
+
+
+@mixin full(){
+  width: 100%;
+  height: 100%;
+  @include pos(a);
+  left: 0;
+  top: 0;
+}
+
+.videopage-C{
+
+   .wish-input-C{
+        @include full();
+        z-index: 100;
+        background: rgba(0,0,0,.6);
+        div{
+          background: #fff;
+          text-align: center;
+        }
+        textarea{
+          width: 100%;
+          height: 4rem;
+          outline: none;
+        }
+        span{
+          display: inline-block;
+          width: 2rem;
+          height: 1rem;
+          border:1px solid #ccc;
+          line-height: 1rem;
+          margin:4px 10px;
+          @include br(10px);
+        }
+    }
+  
+  @include full();
+  h1{
+    height: 3.4rem;
+  }
+  .video-C{
+    margin: 0 auto;
+    width: 100%;
+    height: 6rem;
+    text-align: center;
+     video{
+        margin-top: .9rem;
+        width: 80%;
+     }
+  }
+  .shi{
+    width:5.5rem;
+    margin: 0 auto;
+  }
+
+  .wish-C{
+     background: #eaeaea;
+     width: 10rem;
+     height: 3rem;
+
+     .wish-input{
+       
+       width: 9rem;
+       height: .8rem;
+       margin :.1rem auto;
+       background: #fff;
+       @include pos(r);
+       span{
+        @include pos(a);
+        left: .4rem;
+        top: .1rem;
+        color:#999999;
+       }
+       @include br(1rem);
+
+       .wish-ico{
+          $size:.7rem;
+         width: $size;
+         height: $size;
+         background: #e1e0ca;
+         right: .3rem;
+         @include br(50%);
+         left: auto;
+         top:.05rem;
+         &:before{
+          content:'';
+            width: 0;
+            height: 0;
+            border-left: .17rem solid transparent;
+            border-right: .17rem solid transparent;
+            border-bottom: .17rem solid #e1e0ca;
+         }
+         i{
+           display: inline-block;
+           width: .1rem;
+           height: .1rem;
+           background: #fff;
+           @include br(5px);
+           @include pos(r);
+           left: -.1rem;
+           margin-top: -.04rem;
+         }
+       }
+     }
+  }
+}
