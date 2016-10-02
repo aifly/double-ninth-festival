@@ -21,7 +21,7 @@ export default class Videopage extends Component {
 			<div className='videopage-C' style={style}  onTouchTap={this.beginInput.bind(this)}>
 				<h1></h1>
 				<div className='video-C' style={style1}>
-					<video controls src='./assets/video/1.mp4' autoPlay></video>
+					<video ref='video' controls src='./assets/video/1.mp4' autoPlay></video>
 				</div>
 				<div className='shi'>
 					<img src='./assets/images/shi.png'/>
@@ -40,7 +40,7 @@ export default class Videopage extends Component {
 					<div>
 						<textarea className='wish-input' ref='wish-input'></textarea>
 						<span onTouchTap={this.entryShare.bind(this)}>确定</span>
-						<span onTouchTap={()=>{this.setState({showInput:false})}}>取消</span>
+						<span onTouchTap={this.cancel.bind(this)}>取消</span>
 					</div>
 				</div>
 			</div>
@@ -52,11 +52,18 @@ export default class Videopage extends Component {
 		if(e.target.nodeName === 'VIDEO' || e.target.classList.contains('video-C') || e.target.innerHTML === "取消"){
 			return;
 		}
-
 		this.setState({
 			showInput:true
-		})
+		});
+		this.refs['video'].pause();
+
 	}
+
+	cancel(){
+		this.setState({showInput:false});
+		//this.refs['video'].play();
+	}
+
 	entryShare(){
 		let {obserable} = this.props;
 		let value =(this.refs['wish-input'].value);

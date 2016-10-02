@@ -123,12 +123,17 @@
 }
 
 .message-C{
+  opacity:0;
+  @include transition(opacity .4s);
   $height: 1.3rem;
   width: 96%;
   margin: 0 auto;
   @include pos(r);
   top: .4rem;
   h1{
+    height: .8rem;
+  }
+  h2{
     height: .8rem;
     line-height: .8rem;
     font-weight: normal;
@@ -172,12 +177,12 @@
     line-height: $height;
     @include br(.2rem);
     margin-left:.4rem;
-    padding:0 .3rem;
+    padding:0 .2rem;
     @include pos(r);
     font-size:.4rem;
     img{
       width: 3rem;
-      margin-top: -.5rem;
+     // margin-top: -.5rem;
     }
     &:before{
       content:"";

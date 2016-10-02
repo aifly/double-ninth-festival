@@ -40,7 +40,6 @@ var util = {
 			'./assets/images/friend.png',
 			'./assets/images/message-bg.png',
 			'./assets/images/message-footer.jpg',
-			'./assets/images/message-header.png',
 			'./assets/images/shi.png',
 			'./assets/images/smile.png',
 			'./assets/images/videobg.png'
@@ -49,9 +48,6 @@ var util = {
 	setDefault(){
 		document.querySelector('html').style.fontSize = data.width / 10 + 'px';
 	}
-
-
-
 }
 
 util.init();

@@ -1,10 +1,15 @@
 .message-C {
+  opacity: 0;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
   width: 96%;
   margin: 0 auto;
   position: relative;
   top: .4rem;
   clear: both; }
   .message-C h1 {
+    height: .8rem; }
+  .message-C h2 {
     height: .8rem;
     line-height: .8rem;
     font-weight: normal;
@@ -38,12 +43,11 @@
     line-height: 1.3rem;
     border-radius: 0.2rem;
     margin-left: .4rem;
-    padding: 0 .3rem;
+    padding: 0 .2rem;
     position: relative;
     font-size: .4rem; }
     .message-C .text img {
-      width: 3rem;
-      margin-top: -.5rem; }
+      width: 3rem; }
     .message-C .text:before {
       content: "";
       position: absolute;

@@ -21,7 +21,7 @@ export default class MessageBox extends Component {
 			<div className='messageBox-C' style={style}>
 				
 				<div className='messageBox-content' ref='messageBox-content'>
-					<div ref='messageBox-scroll' style={{paddingBottom:'.5rem'}}>
+					<div ref='messageBox-scroll' style={{paddingBottom:'1rem'}}>
 						{this.state.messages.map((item,i)=>{
 							return <Message key={i} {...item}></Message>
 						})}
@@ -64,12 +64,11 @@ export default class MessageBox extends Component {
 				clearInterval(this.t);
 				setTimeout(()=>{
 					this.setState({
-						//showDialog:true
+						showDialog:true
 					})
-					this.scroll && this.scroll.refresh();
-				},400)
+				},2000)
 			}
-		},1000);
+		},2000);
 	}
 	entryVideoPage(){
 		clearInterval(this.t);
