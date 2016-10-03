@@ -18,8 +18,7 @@ export default class MessageBox extends Component {
 			backgroundSize:'cover'
 		};
 		return (
-			<div className='messageBox-C' style={style}>
-				
+			<div className='messageBox-C' style={style} onTouchTap={this.showDialog.bind(this)}>
 				<div className='messageBox-content' ref='messageBox-content'>
 					<div ref='messageBox-scroll' style={{paddingBottom:'1rem'}}>
 						{this.state.messages.map((item,i)=>{
@@ -37,6 +36,14 @@ export default class MessageBox extends Component {
 				</div>
 			</div>
 		);
+	}
+	showDialog(){
+		if(this.canTap){
+			this.timer && clearTimeout(this.timer);
+			this.setState({
+				showDialog:true
+			});
+		}
 	}
 	componentDidMount(){
 		setTimeout(()=>{
@@ -62,11 +69,12 @@ export default class MessageBox extends Component {
 			this.scroll && this.scroll.refresh();
 			if(iNow >= messages.length-1){
 				clearInterval(this.t);
-				setTimeout(()=>{
+				this.canTap = true;
+				this.timer = setTimeout(()=>{
 					this.setState({
 						showDialog:true
 					})
-				},2000)
+				},5000);
 			}
 		},2000);
 	}

@@ -127,15 +127,19 @@
    .wish-input-C{
         @include full();
         z-index: 100;
+        @include transform3d();
         background: rgba(0,0,0,.6);
         div{
           background: #fff;
           text-align: center;
+          @include transform(tranlateZ(1px));
         }
         textarea{
           width: 100%;
           height: 2rem;
           outline: none;
+          margin-top: 1.5rem;
+          @include br(0);
         }
         span{
           display: inline-block;

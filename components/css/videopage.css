@@ -11,14 +11,22 @@
     left: 0;
     top: 0;
     z-index: 100;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    perspective: 800px;
+    -webkit-perspective: 800px;
     background: rgba(0, 0, 0, 0.6); }
     .videopage-C .wish-input-C div {
       background: #fff;
-      text-align: center; }
+      text-align: center;
+      -webkit-transform: tranlateZ(1px);
+      transform: tranlateZ(1px); }
     .videopage-C .wish-input-C textarea {
       width: 100%;
       height: 2rem;
-      outline: none; }
+      outline: none;
+      margin-top: 1.5rem;
+      border-radius: 0; }
     .videopage-C .wish-input-C span {
       display: inline-block;
       width: 2rem;
