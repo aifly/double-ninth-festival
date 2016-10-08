@@ -23,6 +23,7 @@ export default class Message extends Component {
 		);
 	}
 	componentDidMount(){
+		let {obserable} = this.props;
 		let messageC = this.refs['message-C'];
 		setTimeout(()=>{
 			messageC.style.opacity=1;
@@ -34,6 +35,8 @@ export default class Message extends Component {
 					marginTop:'.5rem',
 					imgTop:0,
 					hasImg:true
+				},()=>{
+					obserable.trigger({type:'refresh'});
 				});
 			}
 		}

@@ -22,7 +22,7 @@ export default class MessageBox extends Component {
 				<div className='messageBox-content' ref='messageBox-content'>
 					<div ref='messageBox-scroll' style={{paddingBottom:'1rem'}}>
 						{this.state.messages.map((item,i)=>{
-							return <Message key={i} {...item}></Message>
+							return <Message {...this.props} key={i} {...item}></Message>
 						})}
 					</div>
 				</div>
@@ -46,44 +46,70 @@ export default class MessageBox extends Component {
 		}
 	}
 	componentDidMount(){
+		
+		let {messages,obserable} = this.props;
 		setTimeout(()=>{
+
+			var iNow = 0,
+				pHeight = this.refs['messageBox-content'].offsetHeight,
+				scrollEl = this.refs['messageBox-scroll'];
+
 			this.scroll = new IScroll(this.refs['messageBox-content'],{
 				click:false
 			});
-		},1);
-		let {messages} = this.props;
-		var iNow = 0,
-			pHeight = this.refs['messageBox-content'].offsetHeight,
-			scrollEl = this.refs['messageBox-scroll'];
-			this.state.messages.push(messages[0]);
-			this.forceUpdate();
-		this.t = setInterval(()=>{
-			iNow++;
-			this.state.messages.push(messages[iNow]);
-			this.forceUpdate();
-			
 
-			if(scrollEl.offsetHeight > pHeight){
-				this.scroll.scrollToElement(document.querySelector('.messageBox-content .message-C:last-of-type'),null,null,true);
-			}
-			this.scroll && this.scroll.refresh();
-			if(iNow >= messages.length-1){
-				clearInterval(this.t);
-				this.canTap = true;
-				this.timer = setTimeout(()=>{
+
+			obserable.on('refresh',()=>{
+				this.scroll.refresh();
+			});
+
+			this.scroll.on('scrollEnd',(e)=>{
+				if(this.scroll.y<=pHeight-scrollEl.offsetHeight){
 					this.setState({
 						showDialog:true
+					},()=>{
+						setTimeout(()=>{
+							this.entryVideoPage();
+						},3000);
 					})
-				},5000);
-			}
-		},2000);
+				}
+			})
+		},1);
+		messages.forEach((item,i)=>{
+			this.state.messages.push(messages[i]);
+		});
+		this.forceUpdate();
+		
+
+		/*	this.t = setInterval(()=>{
+				iNow++;
+				this.state.messages.push(messages[iNow]);
+				this.forceUpdate();
+				if(scrollEl.offsetHeight > pHeight){
+					this.scroll.scrollToElement(document.querySelector('.messageBox-content .message-C:last-of-type'),null,null,true);
+				}
+				this.scroll && this.scroll.refresh();
+				if(iNow >= messages.length-1){
+					clearInterval(this.t);
+					this.canTap = true;
+					this.timer = setTimeout(()=>{
+						this.setState({
+							showDialog:true
+						},()=>{
+							setTimeout(()=>{
+								this.entryVideoPage();
+							},2000);
+						})
+					},5000);
+				}
+			},200);*/
 	}
 	entryVideoPage(){
 		clearInterval(this.t);
 		this.setState({
 			showDialog:false
 		});
-		document.title = '你能捐献一点点时间吗？让爱重聚！';
+		document.title = '今又重阳，让爱相聚';
 		let {obserable} = this.props;
 		obserable.trigger({
 			type:'setCurrentComponet',
