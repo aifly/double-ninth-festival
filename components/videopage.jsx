@@ -30,7 +30,7 @@ export default class Videopage extends Component {
 				</div>
 				<div className='wish-C'>
 					<section className='wish-input'>
-						<span>给父母稍一段话，让爱重聚！</span>
+						<span>今又重阳，让爱相聚</span>
 						<span className='wish-ico'>
 							<i></i>
 							<i></i>
@@ -53,7 +53,7 @@ export default class Videopage extends Component {
 	}
 
 	beginInput(e){
-
+		e.preventDefault();
 		if(e.target.nodeName === 'VIDEO' || e.target.classList.contains('video-C') || e.target.innerHTML === "取消"){
 			return;
 		}
